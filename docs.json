@@ -13,9 +13,11 @@
         ["Quickstart", "/quickstart"],
         [
             "Installation",
-            ["How to Install", "/installation/installation"],
-            ["Individual", "/installation/individual"],
-            ["Organisation", "/installation/organisation"]
+            [
+                ["How to Install", "/installation/installation"],
+                ["Individual", "/installation/individual"],
+                ["Organisation", "/installation/organisation"]
+            ]
         ]
     ]
   }
