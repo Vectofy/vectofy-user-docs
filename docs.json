@@ -2,7 +2,7 @@
     "name": "Vectofy",
     "theme": "#ab47bc",
     "favicon": "/assets/favicon.ico",
-    "logo": "https://mycdn.com/awesome-logo.png",
+    "logo": "https://vectofydev.blob.core.windows.net/images/Original.svg",
     "docsearch": {
       "appId": "...",
       "apiKey": "...",
