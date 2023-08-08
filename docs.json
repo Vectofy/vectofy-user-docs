@@ -10,6 +10,12 @@
     },
     "sidebar": [
         ["Overview", "/"],
-        ["Quickstart", "/quickstart"]
+        ["Quickstart", "/quickstart"],
+        [
+            "Installation",
+            ["How to Install", "/installation/installation"],
+            ["Individual", "/installation/individual"],
+            ["Organisation", "/installation/organisation"]
+        ]
     ]
   }
