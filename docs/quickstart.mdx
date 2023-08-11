@@ -6,9 +6,8 @@ It will give you an overview of everything you need to get started. There is, of
 
 Here, we'll be going over:
 1. Starting up the software
-2. Interacting with Vectofy
-3. Tracing through dependents and precedents
-4. Finding important cells
+2. Tracing through dependents and precedents
+3. Finding important cells
 
 ## Starting up the Software
 
@@ -26,12 +25,74 @@ Once loading is complete, you will have a 3D visualisation of your current Workb
 
 ### Moving the Visualisation
 
-To rotate the visualisation, left-click and drag. To move the point of rotation for the visualisation, right-click and drag. When using Vectofy, the camera will automatically move to what is improtant in the visualisation as long as autocamera in the Home tab in Vectofy is checked, although you can still use these controls to make adjustments to the camera. Autocamera is checked by default when the software is opened.
+To rotate the visualisation, left-click and drag. To move the point of rotation for the visualisation, right-click and drag. 
+
+When using Vectofy, the camera will automatically move to what is improtant in the visualisation as long as autocamera in the Home tab in Vectofy is checked, although you can still use these controls to make adjustments to the camera. Autocamera is checked by default when the software is opened.
 
 <Image src="/assets/quickstart/autocamera.png" alt="The Vectofy home tab with the autocamera option highlighted with a red square"/>
 
 ### Tracing All Formula Dependencies
 
-Finally, press the 'Trace All Cells' button in the Home tab in Vectofy. This will create lines connecting all precedents and dependent in the workbook on the Vectofy visualisation. The lines are a gradient with the colours orange and blue as default. The blue represents precedents in the connection, and the orange represents dependents. This is a quick and easy way to identify the flow of data in the workbook.
+Finally, press the 'Trace All Cells' button in the Home tab in Vectofy. This will create lines connecting all precedents and dependent in the workbook on the Vectofy visualisation. 
+
+The lines are a gradient with the colours orange and blue as default. The blue represents precedents in the connection, and the orange represents dependents. This is a quick and easy way to identify the flow of data in the workbook.
 
 <Image src="/assets/quickstart/allcells.png" alt="The Vectofy home tab and visualisation with the all cells option highlighted with a red square"/>
+
+Somtimes it's useful to only see a the visualisation produced for a selection of the sheets. By pressing the 'Show Sidebar' button above the bottom menu to the left of the screen, you will be given a list of all sheets in workbook. Simply click one of the sheets in the list to remove it from the visualisation and press it again to remove it.
+
+<Image src="/assets/quickstart/allcells-sheets-deselect.png" alt="Vectofy add-in with the sidebar highlighted with a red square"/>
+
+This selecting and deselecting of sheets can be used with all of Vectofy's features. A sheet distance slider is also present in this sidebar, which controls the distance between each sheet in the visualisation.
+
+## Tracing Through Dependents and Precedents
+
+### Selecting Ranges
+
+Selection works in Vectofy by simply mirroring your currently selected range in Excel. This is shown as a green box surrounding the selected range in the visualisation.
+
+<Image src="/assets/quickstart/select.png" alt="Vectofy add-in with the sidebar highlighted with a red square"/>
+
+### Freezing Selection
+
+Now head to the 'Discovery' tab in the bottom menu.
+
+When here, you will see a buttom on the left most section of the tab saying 'Freeze Selection'.
+
+<Image src="/assets/quickstart/freeze.png" alt="Vectofy add-in with the freeze button highlighted in a red square"/>
+
+By pressing this with a range selected, Vectofy will no longer mirror what is selected in Excel. This allows you to focus on a single selection and explore its related cells within Excel *without it deselecting the selection in Vectofy*. 
+
+To unfreeze a selection, press the button in the same place reading 'Unfreeze Selection'. This will change the selection to whatever is selected in Excel.
+
+### Tracing
+
+With a range selected and frozen, we can now trace its dependents and precedents. 
+
+In the 'Formula Trace' section of the 'Discovery' tab, you will see two sets of buttons at the top labelled 'Precedent' and 'Dependent'. These are use to control tracing.
+
+With a selection frozen, press the left pointing arrow to the left of 'Precedent' to increase your precedent depth. If the selection isn't yet frozen, this will be done automatically upon pressing it. 
+
+<Image src="/assets/quickstart/prec-inc.png" alt="Vectofy add-in with the increment precedent depth highlighted with a red square"/>
+
+All the precedents of your selection will now be highlighted in blue in Vectofy. By pressing the button again, all the precedents of your precedents will be highlighted. This can be continued  until the final precedents to the selection are found. 
+
+<Image src="/assets/quickstart/prec.png" alt="Example of precedent tracing in Vectofy"/>
+
+The current depth of precedents visualised with respect to the selected range is shown by the 'Precedent Depth' counter in 'Formula Trace'.
+
+<Image src="/assets/quickstart/prec-depth.png" alt="Example of precedent depth counter in Vectofy"/>
+
+To decrement the precedent depth, press the single right pointing arrow to the left of 'Precedent', or press the double right pointing arrow directly next to it to reset the depth to 0.
+
+<Image src="/assets/quickstart/prec-reset.png" alt="Example of precedent depth decrement in Vectofy"/>
+
+These controls are an identical mirror to those for Dependent tracing, and both can be controlled independently.
+
+<Warning>The software is currently in early release, and tracing to a large depth can sometimes slow down the software.</Warning>
+
+### Reselecting
+
+Sometimes, it can be useful to readjust the selected and frozen range to on which has been highlighted through tracing, *without the need to freeze and unfreeze the selection*. To do this, simply double click on a highlighted cell in tracing, and the selected range will change to that cell and automatically be frozen.
+
+Likewise, it can be handy to directly go to a range highlighted in Vectofy within Excel itself. To do this, single click on the desired highlighted cell. This will select it in Excel but won't affect the selected and frozen range within Vectofy.
