@@ -93,6 +93,35 @@ These controls are an identical mirror to those for Dependent tracing, and both 
 
 ### Reselecting
 
-Sometimes, it can be useful to readjust the selected and frozen range to on which has been highlighted through tracing, *without the need to freeze and unfreeze the selection*. To do this, simply double click on a highlighted cell in tracing, and the selected range will change to that cell and automatically be frozen.
+Sometimes, it can be useful to readjust the selected and frozen range to one which has been highlighted through tracing, *without the need to freeze and unfreeze the selection*. To do this, simply double click on a highlighted cell in tracing, and the selected range will change to that cell and automatically be frozen.
 
 Likewise, it can be handy to directly go to a range highlighted in Vectofy within Excel itself. To do this, single click on the desired highlighted cell. This will select it in Excel but won't affect the selected and frozen range within Vectofy.
+
+## Finding Important Cells
+
+### Sheet Opacity
+
+Head to the 'Error Map' tab in the bottom menu. Here, we can highlight cells of importance to more quickly find the core logic of a workbook.
+
+When in this tab, the sheets will go almost invisible. This is because only *sheets with highlighted cells are shown clearly*.
+
+You can control the opacity of sheets without highlighted cells with the 'Dim Sheet Opacity' slider.
+
+<Image src="/assets/quickstart/dim.png" alt="Showing the 'Dim Sheet Opacity' slider in Vectofy"/>
+
+There is no cell selection in 'Error Map', so there will be no green highlighting mirroring your Excel selection.
+
+### Finding Most Important Output Cells
+
+One useful operation that can be done using 'Error Map' is finding the most important output output cells in your Workbook. We do this by highlighting the output cells with the most amount of precedents leading to them - this includes precedents from all depths that eventually connect to an output.
+
+Finding this is simple. Firstly, select the 'Output' checkbox in the 'Input/Output' section of 'Error Map'. This will show all the output cells in the Workbook, that is, all cells with precedents that have no dependents.
+
+<Image src="/assets/quickstart/output.png" alt="Selecting the Output checkbox in Vectofy"/>
+
+Then, go to the 'Filter Section' in 'Error Map'. Check 'Use Filter', change the 'Num. of Cells' number input to be 5, and select 'Total Precedents' from the 'Select Filter Type' dropdown. The 5 outputs with the most total precedents will now be shown.
+
+<Image src="/assets/quickstart/output-filter.png" alt="Selecting the most important outputs in Vectofy"/>
+
+This is a great way to quickly find the most important bits of logic in your Workbooks.
+
