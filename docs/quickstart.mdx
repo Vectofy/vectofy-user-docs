@@ -31,17 +31,11 @@ When using Vectofy, the camera will automatically move to what is improtant in t
 
 ### Tracing All Formula Dependencies
 
-Finally, press the 'Trace All Cells' button in the Home tab in Vectofy. This will create lines connecting all precedents and dependent in the workbook on the Vectofy visualisation. 
+Finally, press the 'Trace All Connections' button in the Home tab in Vectofy. This will create lines connecting all precedents and dependent in the workbook on the Vectofy visualisation. 
 
 The lines are a gradient with the colours orange and blue as default. The blue represents precedents in the connection, and the orange represents dependents. This is a quick and easy way to identify the flow of data in the workbook.
 
 <Image src="/assets/quickstart/allcells.png" alt="The Vectofy home tab and visualisation with the all cells option highlighted with a red square"/>
-
-Somtimes it's useful to only see the visualisation produced for a selection of the sheets. By pressing the 'Show Sidebar' button above the bottom menu to the left of the screen, you will be given a list of all sheets in workbook. Simply click one of the sheets in the list to remove it from the visualisation and press it again to remove it.
-
-<Image src="/assets/quickstart/allcells-sheets-deselect.png" alt="Vectofy add-in with the sidebar highlighted with a red square"/>
-
-This selecting and deselecting of sheets can be used with all of Vectofy's features. A sheet distance slider is also present in this sidebar, which controls the distance between each sheet in the visualisation.
 
 ## Tracing Through Dependents and Precedents
 
@@ -51,17 +45,15 @@ Now head to the 'Discovery' tab in the bottom menu.
 
 Selection works in Vectofy by simply mirroring your currently selected range in Excel when the 'Select From Excel' button is pressed, or [R] on your keyboard.
 
-{/* <Image src="/assets/quickstart/select.png" alt="Vectofy add-in with the sidebar highlighted with a red square"/> TODO: replace */}
+<Image src="/assets/quickstart/select.png" alt="Vectofy add-in with the sidebar highlighted with a red square"/>
 
 This is shown as a green box surrounding the selected range in the visualisation. To select a range in Vectofy, it must be within the used range of the current sheet in Excel.
 
-{/* Add picture of selection in excel mirroring vectofy */}
-
 ### Tracing
 
-With a range selected and frozen, we can now trace its dependents and precedents. 
+With a range selected, we can now trace its dependents and precedents. 
 
-In the 'Formula Trace' section of the 'Discovery' tab, you will see two sets of buttons at the top labelled 'Precedent' and 'Dependent'. These are use to control tracing.
+In the 'Formula Trace' section of the 'Discovery' tab, you will see two sets of buttons at the top labelled 'Precedent' and 'Dependent'. These are used to control tracing.
 
 With a selection frozen, press the left pointing arrow to the left of 'Precedent' to increase your precedent depth. If the selection isn't yet frozen, this will be done automatically upon pressing it. 
 
@@ -93,15 +85,23 @@ Likewise, it can be handy to directly go to a range highlighted in Vectofy withi
 
 If you want to dig deeper into a cells formula, use the advanced trace feature. This can be activated by pressing the 'Advanced Trace' button in the discovery tab.
 
-When pressed, the UI will change by getting rid of the basic trace controls, and adding in the navigation pane, the formula unppacker, and some options. A range of only a single cell can be used in this mode, otherwise not all functionality will be available.
+<Image src="/assets/quickstart/adv-click.png" alt=""/>
+
+When pressed, the UI will change by getting rid of the basic trace controls, and adding in the navigation pane, the formula unppacker, evaluation, and some options. A range of only a single cell can be used in this mode, otherwise not all functionality will be available.
+
+<Image src="/assets/quickstart/adv.png" alt=""/>
 
 In this mode, the visualiation is controlled through the navigation pane. For a selected range, the pane will show a list of dependents and precedents. By expanding these to show their children, i.e. ranges that are precedents to the precedents or dependents to the dependents, the visualiation will update to show how these new ranges are connected to the selected range. Navigating the pane can be done using the up and down arrow keys, and by pressing the [Enter] key to expand. The pane will focus on one range at a time and will darken this range - this is the currently inspcted range.
 
 As default, the 'Autopin' option is selected. This automatically will add all expanded ranges children to the visualiation. By deselecting this option, only the currently inspected cell will be shown in the visualiation. By pressing the [Space] key, a range can be 'pinned', meaning that range will remain visualised whilst the selected range is unchanged. This is shown by a little pin appearing next to the range in the navigation pane.
 
+<Image src="/assets/quickstart/adv-noautopin.png" alt=""/>
+
 #### Formula Unpacker
 
 Whilst traversing the precedents of a selected range in the navigation pane, the formula unpacker in the bottom menu in Discovery will automatically update. This view shows all the expanded precedents formulas replaced into the selected ranges formula. The inspected range in the unpacker will be highlighted in bold in the unpacker.
+
+<Image src="/assets/quickstart/unpacker.png" alt=""/>
 
 #### Evaluation
 
