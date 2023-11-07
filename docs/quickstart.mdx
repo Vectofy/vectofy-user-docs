@@ -1,8 +1,6 @@
 # Quickstart
 
-If you're new to the software and want a quick few easy steps to get you started, then this quickstart is probably the right place to be. This will take less than 10 minutes.
-
-It will give you an overview of everything you need to get started. There is, of course, more in-depth documentation for all the features if you want to look into something more specific.
+If you're new to the software and want a quick few easy steps to get you started, then this quickstart is probably the right place to be. This will take less than 10 minutes. It will give you an overview of everything you need to get started.
 
 Here, we'll be going over:
 1. Starting up the software
@@ -27,7 +25,7 @@ Once loading is complete, you will have a 3D visualisation of your current Workb
 
 To rotate the visualisation, left-click and drag. To move the point of rotation for the visualisation, right-click and drag - this can also be achieved by left clicking whilst pressing [Control] on your keyboard. 
 
-When using Vectofy, the camera will automatically move to what is improtant in the visualisation as long as autocamera in the Home tab in Vectofy is checked, although you can still use these controls to make adjustments to the camera. Autocamera is checked by default when the software is opened.
+When using Vectofy, the camera will automatically move to what is improtant in the visualisation as long as autocamera in the Home tab in Vectofy is checked, although you can still use these controls to make adjustments to the camera. Autocamera is checked by default when the software is opened, and it's distance to the visualisation and it's field of view can be controlled.
 
 <Image src="/assets/quickstart/autocamera.png" alt="The Vectofy home tab with the autocamera option highlighted with a red square"/>
 
@@ -49,21 +47,15 @@ This selecting and deselecting of sheets can be used with all of Vectofy's featu
 
 ### Selecting Ranges
 
-Selection works in Vectofy by simply mirroring your currently selected range in Excel. This is shown as a green box surrounding the selected range in the visualisation.
-
-<Image src="/assets/quickstart/select.png" alt="Vectofy add-in with the sidebar highlighted with a red square"/>
-
-### Freezing Selection
-
 Now head to the 'Discovery' tab in the bottom menu.
 
-When here, you will see a buttom on the left most section of the tab saying 'Freeze Selection'.
+Selection works in Vectofy by simply mirroring your currently selected range in Excel when the 'Select From Excel' button is pressed, or [R] on your keyboard.
 
-<Image src="/assets/quickstart/freeze.png" alt="Vectofy add-in with the freeze button highlighted in a red square"/>
+{/* <Image src="/assets/quickstart/select.png" alt="Vectofy add-in with the sidebar highlighted with a red square"/> TODO: replace */}
 
-By pressing this with a range selected, Vectofy will no longer mirror what is selected in Excel. This allows you to focus on a single selection and explore its related cells within Excel *without it deselecting the selection in Vectofy*. 
+This is shown as a green box surrounding the selected range in the visualisation. To select a range in Vectofy, it must be within the used range of the current sheet in Excel.
 
-To unfreeze a selection, press the button in the same place reading 'Unfreeze Selection'. This will change the selection to whatever is selected in Excel.
+{/* Add picture of selection in excel mirroring vectofy */}
 
 ### Tracing
 
@@ -93,9 +85,31 @@ These controls are an identical mirror to those for Dependent tracing, and both 
 
 ### Reselecting
 
-Sometimes, it can be useful to readjust the selected and frozen range to one which has been highlighted through tracing, *without the need to freeze and unfreeze the selection*. To do this, simply double click on a highlighted cell in tracing, and the selected range will change to that cell and automatically be frozen.
+Sometimes, it can be useful to readjust the selected range to one which has been highlighted through tracing, *without the need to select in Excel*. To do this, simply double click on a highlighted cell in tracing, and the selected range will change to that cell and automatically be frozen.
 
-Likewise, it can be handy to directly go to a range highlighted in Vectofy within Excel itself. To do this, single click on the desired highlighted cell. This will select it in Excel but won't affect the selected and frozen range within Vectofy.
+Likewise, it can be handy to directly go to a range highlighted in Vectofy within Excel itself. To do this, single click on the desired highlighted cell. This will select it in Excel but won't affect the selected range within Vectofy.
+
+### Advanced Trace
+
+If you want to dig deeper into a cells formula, use the advanced trace feature. This can be activated by pressing the 'Advanced Trace' button in the discovery tab.
+
+When pressed, the UI will change by getting rid of the basic trace controls, and adding in the navigation pane, the formula unppacker, and some options. A range of only a single cell can be used in this mode, otherwise not all functionality will be available.
+
+In this mode, the visualiation is controlled through the navigation pane. For a selected range, the pane will show a list of dependents and precedents. By expanding these to show their children, i.e. ranges that are precedents to the precedents or dependents to the dependents, the visualiation will update to show how these new ranges are connected to the selected range. Navigating the pane can be done using the up and down arrow keys, and by pressing the [Enter] key to expand. The pane will focus on one range at a time and will darken this range - this is the currently inspcted range.
+
+As default, the 'Autopin' option is selected. This automatically will add all expanded ranges children to the visualiation. By deselecting this option, only the currently inspected cell will be shown in the visualiation. By pressing the [Space] key, a range can be 'pinned', meaning that range will remain visualised whilst the selected range is unchanged. This is shown by a little pin appearing next to the range in the navigation pane.
+
+#### Formula Unpacker
+
+Whilst traversing the precedents of a selected range in the navigation pane, the formula unpacker in the bottom menu in Discovery will automatically update. This view shows all the expanded precedents formulas replaced into the selected ranges formula. The inspected range in the unpacker will be highlighted in bold in the unpacker.
+
+#### Evaluation
+
+<Warning>This is a new feature, and may be unstable. If you experience any irregularities, please check the exceptions log on the home page and report the problem back to us. Thank you.</Warning>
+
+Using the evaluation section in the advanced trace section, users can now solve complex functions in formula in the unpacker. To do this, simply check 'Complex Functions' in the evaluate section and the unpacker, navigation pane, and visuaisation will all update to reflect the solved complex function.
+
+Currently, only the VLOOKUP and HLOOKUP functions are supported, but this is to be expanded in future releases.
 
 ## Finding Important Cells
 
