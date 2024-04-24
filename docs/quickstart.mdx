@@ -1,142 +1,46 @@
 # Quickstart
 
-If you're new to the software and want a quick few easy steps to get you started, then this quickstart is probably the right place to be. This will take less than 10 minutes. It will give you an overview of everything you need to get started.
+If you want to quickly get to grips with the main features of the software, then this quickstart is the right place to be. This will take less than 5 minutes. It will give you an overview of everything you need to get started.
 
-Here, we'll be going over:
-1. Starting up the software
-2. Tracing through dependents and precedents
-3. Finding important cells
+Each section covers a main feature of the software:
+1. Overview
+2. Trace
+3. Search
+4. Refresh
 
-## Starting up the Software
+## Overview
 
-### Opening Taskpane
+The overview section houses features that apply accross the whole workbook, and can be accessed from the toolbar or by using the shortcut `Alt + Shift + o`.
 
-To start Vectofy, you're going to want to initially open a document in Excel. To get the most out of this quickstart, choose one with multiple sheets and plenty of formulas connecting different cells. 
+The main feature here is **Trace All Connections**. When pressed, all range-to-range formula connections will be shown as gradient lines on the visualisation, going from orange for precedents, to blue for dependents.
 
-Once Excel is open, go to the Home tab and head to the far right. Here, you should see a section title 'Vectofy' and a button labelled 'Start Visualisation'. Click this to open the Vectofy taskpane.
+The exception log is also housed here. This is a list of errors that have occured during exection, although it is rare that any exceptions caught will cause the program to function incorrectly. If something does go wrong, check the exception log and send it across to info@vectofy.co.uk if possible._createMdxContent
 
-<Info>If you don't see the Vectofy section in the Home tab, make sure that the software is installed correctly. Some help on how to do this can be found in the installation section of these docs.</Info>
+## Trace
 
-<Image src="/assets/quickstart/home-vectofy-highlighted.png" alt="The excel home tab with the Vectofy section highlighted with a red square"/>
+The trace section allows users to trace the dependents and precedents of a workbook. This can be accessed from the toolbar or by using the shortcut `Alt + Shift + t` whilst a single cell or range is selected.
 
-Once loading is complete, you will have a 3D visualisation of your current Workbook in the taskpane. Loading is often very quick, but very large or complex workbooks can sometimes take a bit longer. The loading bar should help give you an indication of how much work Vectofy needs to do to open your workbook.
+The trace window is split into three synchronised sections:
 
-### Moving the Visualisation
+1. **The visualisation**, which shows which cells are selected, along with their dependents and precedents and connections between them.
+2. **The formula unpacker**, which shows the formula of the selected cell with substitued formulas for expanded precedents.
+3. **The navigation pane**, which shows the selected cell and its precedents and dependents in a list. If an item has children, for example if a precedent has its own precedents, then the item can be expaned to show them. 
 
-To rotate the visualisation, left-click and drag. To move the point of rotation for the visualisation, right-click and drag - this can also be achieved by left clicking whilst pressing [Control] on your keyboard. 
+Doing this updates the visualisation to show the expanded children, and if a precedent is expanded then it's formula is subtituted into its reference in the formula unpacker.
 
-When using Vectofy, the camera will automatically move to what is improtant in the visualisation as long as autocamera in the Home tab in Vectofy is checked, although you can still use these controls to make adjustments to the camera. Autocamera is checked by default when the software is opened, and it's distance to the visualisation and it's field of view can be controlled.
+## Search
 
-<Image src="/assets/quickstart/autocamera.png" alt="The Vectofy home tab with the autocamera option highlighted with a red square"/>
+The search section allows users to search for cells in the workbook. This can be accessed from the toolbar or by using the shortcut `Alt + Shift + s`.
 
-### Tracing All Formula Dependencies
+The search window is also split into three synchronised sections:
+1. **The visualisation**, which shows all cells that meet the search criteria
+2. **The navigation pane**, which allows users to go through the search results in a categorised list, with cells able to be found by goin to the specfic error, then sheet, then cell.
+3. **The search library**, situated at the bottom of the screen, which controls the search criteria. Simply tick searches for them to appear in the navigation pane and visualisation. A filter is also found here, allowing users to truncate the search results to the `x` amount that have the highest value for the specific filter, such as total precedents.
 
-Finally, press the 'Trace All Connections' button in the Home tab in Vectofy. This will create lines connecting all precedents and dependent in the workbook on the Vectofy visualisation. 
+## Refresh
 
-The lines are a gradient with the colours orange and blue as default. The blue represents precedents in the connection, and the orange represents dependents. This is a quick and easy way to identify the flow of data in the workbook.
+When Vectofy is loaded for the first time, it will load the Workbook data from Excel and store a snapshot of it. Once a change has been found in Excel meaning that Vectofy and Excel are out of sync, a flag will appear at the top of the window notifying you of this. To update Vectofy to be in sync with the Workbook, simply press the refresh button in the toolbar or use the shortcut `Alt + Shift + r`.
 
-<Image src="/assets/quickstart/allcells.png" alt="The Vectofy home tab and visualisation with the all cells option highlighted with a red square"/>
+---
 
-## Tracing Through Dependents and Precedents
-
-### Selecting Ranges
-
-Now head to the 'Discovery' tab in the bottom menu.
-
-Selection works in Vectofy by simply mirroring your currently selected range in Excel when the 'Select From Excel' button is pressed, or [R] on your keyboard.
-
-<Image src="/assets/quickstart/select.png" alt="Vectofy add-in with the sidebar highlighted with a red square"/>
-
-This is shown as a green box surrounding the selected range in the visualisation. To select a range in Vectofy, it must be within the used range of the current sheet in Excel.
-
-### Tracing
-
-With a range selected, we can now trace its dependents and precedents. 
-
-In the 'Formula Trace' section of the 'Discovery' tab, you will see two sets of buttons at the top labelled 'Precedent' and 'Dependent'. These are used to control tracing.
-
-With a selection frozen, press the left pointing arrow to the left of 'Precedent' to increase your precedent depth. If the selection isn't yet frozen, this will be done automatically upon pressing it. 
-
-<Image src="/assets/quickstart/prec-inc.png" alt="Vectofy add-in with the increment precedent depth highlighted with a red square"/>
-
-All the precedents of your selection will now be highlighted in blue in Vectofy. By pressing the button again, all the precedents of your precedents will be highlighted. This can be continued  until the final precedents to the selection are found. 
-
-<Image src="/assets/quickstart/prec.png" alt="Example of precedent tracing in Vectofy"/>
-
-The current depth of precedents visualised with respect to the selected range is shown by the 'Precedent Depth' counter in 'Formula Trace'.
-
-<Image src="/assets/quickstart/prec-depth.png" alt="Example of precedent depth counter in Vectofy"/>
-
-To decrement the precedent depth, press the single right pointing arrow to the left of 'Precedent', or press the double right pointing arrow directly next to it to reset the depth to 0.
-
-<Image src="/assets/quickstart/prec-reset.png" alt="Example of precedent depth decrement in Vectofy"/>
-
-These controls are an identical mirror to those for Dependent tracing, and both can be controlled independently.
-
-<Warning>The software is currently in early release, and tracing to a large depth can sometimes slow down the software.</Warning>
-
-### Reselecting
-
-Sometimes, it can be useful to readjust the selected range to one which has been highlighted through tracing, *without the need to select in Excel*. To do this, simply double click on a highlighted cell in tracing, and the selected range will change to that cell and automatically be frozen.
-
-Likewise, it can be handy to directly go to a range highlighted in Vectofy within Excel itself. To do this, single click on the desired highlighted cell. This will select it in Excel but won't affect the selected range within Vectofy.
-
-### Advanced Trace
-
-If you want to dig deeper into a cells formula, use the advanced trace feature. This can be activated by pressing the 'Advanced Trace' button in the discovery tab.
-
-<Image src="/assets/quickstart/adv-click.png" alt=""/>
-
-When pressed, the UI will change by getting rid of the basic trace controls, and adding in the navigation pane, the formula unppacker, evaluation, and some options. A range of only a single cell can be used in this mode, otherwise not all functionality will be available.
-
-<Image src="/assets/quickstart/adv.png" alt=""/>
-
-In this mode, the visualiation is controlled through the navigation pane. For a selected range, the pane will show a list of dependents and precedents. By expanding these to show their children, i.e. ranges that are precedents to the precedents or dependents to the dependents, the visualiation will update to show how these new ranges are connected to the selected range. Navigating the pane can be done using the up and down arrow keys, and by pressing the [Enter] key to expand. The pane will focus on one range at a time and will darken this range - this is the currently inspcted range.
-
-As default, the 'Autopin' option is selected. This automatically will add all expanded ranges children to the visualiation. By deselecting this option, only the currently inspected cell will be shown in the visualiation. By pressing the [Space] key, a range can be 'pinned', meaning that range will remain visualised whilst the selected range is unchanged. This is shown by a little pin appearing next to the range in the navigation pane.
-
-<Image src="/assets/quickstart/adv-noautopin.png" alt=""/>
-
-#### Formula Unpacker
-
-Whilst traversing the precedents of a selected range in the navigation pane, the formula unpacker in the bottom menu in Discovery will automatically update. This view shows all the expanded precedents formulas replaced into the selected ranges formula. The inspected range in the unpacker will be highlighted in bold in the unpacker.
-
-<Image src="/assets/quickstart/unpacker.png" alt=""/>
-
-#### Evaluation
-
-<Warning>This is a new feature, and may be unstable. If you experience any irregularities, please check the exceptions log on the home page and report the problem back to us. Thank you.</Warning>
-
-Using the evaluation section in the advanced trace section, users can now solve complex functions in formula in the unpacker. To do this, simply check 'Complex Functions' in the evaluate section and the unpacker, navigation pane, and visuaisation will all update to reflect the solved complex function.
-
-Currently, only the VLOOKUP and HLOOKUP functions are supported, but this is to be expanded in future releases.
-
-## Finding Important Cells
-
-### Sheet Opacity
-
-Head to the 'Error Map' tab in the bottom menu. Here, we can highlight cells of importance to more quickly find the core logic of a workbook.
-
-When in this tab, the sheets will go almost invisible. This is because *only sheets with highlighted cells are shown clearly*.
-
-You can control the opacity of sheets without highlighted cells with the 'Dim Sheet Opacity' slider.
-
-<Image src="/assets/quickstart/dim.png" alt="Showing the 'Dim Sheet Opacity' slider in Vectofy"/>
-
-There is no cell selection in 'Error Map', so there will be no green highlighting mirroring your Excel selection.
-
-### Finding Most Important Output Cells
-
-One useful operation that can be done using 'Error Map' is finding the most important output output cells in your Workbook. We do this by highlighting the output cells with the most amount of precedents leading to them - this includes precedents from all depths that eventually connect to an output.
-
-Finding this is simple. Firstly, select the 'Output' checkbox in the 'Input/Output' section of 'Error Map'. This will show all the output cells in the Workbook, that is, all cells with precedents that have no dependents.
-
-<Image src="/assets/quickstart/output.png" alt="Selecting the Output checkbox in Vectofy"/>
-
-Then, go to the 'Filter Section' in 'Error Map'. Check 'Use Filter', change the 'Num. of Cells' number input to be 5, and select 'Total Precedents' from the 'Select Filter Type' dropdown. The 5 outputs with the most total precedents will now be shown.
-
-<Image src="/assets/quickstart/output-filter.png" alt="Selecting the most important outputs in Vectofy"/>
-
-This is a great way to quickly find the logic with the most impact in your Workbooks. 
-
-You can also select the highlighted cells in Excel from Vectofy directly. Just click on the cell you want to select in Excel and it will show up.
+That's it! You're now ready to start using Vectofy. If you have any questions, please don't hesitate to contact us at info@vectofy.co.uk
